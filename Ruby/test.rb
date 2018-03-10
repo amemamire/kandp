@@ -1,4 +1,9 @@
 
+test = "テスト"
 
 puts "テスト"
-puts "Hello Ruby World!"
+puts "Hello #{test}Ruby World!"
+
+names = ["suzuki","kato","Tanaka"]
+
+puts names
