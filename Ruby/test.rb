@@ -14,6 +14,10 @@
 ・関数の戻り値を返却する際のreturnが省略可能
 =end
 
+#importみたいなもん。「./」でカレントディレクトリを示す。.rbは省略可能
+require './TestClass.rb'
+require './ExtendsTest'
+
 #関数定義
 def hello(name)
   puts "hello! #{name} World!"
@@ -30,11 +34,34 @@ end
 
 puts is_win_point?(80)
 
-##{式}で、ダブルクォーとで囲った文字列には式を埋め込むことができる
+##{式}で、ダブルクォートで囲った文字列には式を埋め込むことができる
 height = 12
 width = 15
 puts "高さ×横幅は#{width * height}"
 
+#配列 型を統一する必要はない
+arr = [10,"テスト",false,"アイウエオ"]
+puts arr[2]
+
+#ハッシュ {キ1ー => 値1, キー2 => 値2}
+mem = { "a" => 10,"b" => 20 }
+puts mem["a"]
+
+#キャスト
+num = "100".to_i #文字→数値
+str = 100.to_s #数値→文字
+puts num.to_s + str # 100100
+puts num + str.to_i # 200
+
+# TestClass.rbのインスタンス化
+takashi = TestClass.new("たかし","20")
+takashi.self_introduction
+TestClass.hello
+
+# ExtendsTestのインスタンス化
+hanako = ExtendsTest.new("はなこ","30")
+hanako.self_introduction
+ExtendsTest.hello
 
 #ここから下は適当
 puts ""
